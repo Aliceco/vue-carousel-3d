@@ -19,6 +19,10 @@
                 zIndex: 999
             }
         },
+        created() {
+            console.log(this.parent.currentIndex)
+            consple.log('test')
+        },
         computed: {
             isCurrent () {
                 return this.index === this.parent.currentIndex
