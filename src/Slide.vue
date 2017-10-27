@@ -22,7 +22,7 @@
          created() {
             this.request()
         },
-        computed: {
+//        computed: {
             isCurrent () {
                 return this.index === this.parent.currentIndex
             },
