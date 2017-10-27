@@ -19,9 +19,8 @@
                 zIndex: 999
             }
         },
-        created() {
-            console.log(this.parent.currentIndex)
-            consple.log('test')
+         created() {
+            this.request()
         },
         computed: {
             isCurrent () {
@@ -60,6 +59,9 @@
             }
         },
         methods: {
+            request () {
+                console.log('aaaaa')
+            },
             getSideIndex (array) {
                 let index = -1
 
