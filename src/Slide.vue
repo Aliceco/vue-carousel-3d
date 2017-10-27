@@ -26,24 +26,24 @@
             slideStyle () {
                 let styles = {}
 
-                if (!this.isCurrent) {
-                    const rIndex = this.getSideIndex(this.parent.rightIndices)
-                    const lIndex = this.getSideIndex(this.parent.leftIndices)
+//                if (!this.isCurrent) {
+                const rIndex = this.getSideIndex(this.parent.rightIndices)
+                const lIndex = this.getSideIndex(this.parent.leftIndices)
 
-                    if (rIndex >= 0 || lIndex >= 0) {
-                        styles = rIndex >= 0 ? this.calculatePosition(rIndex, true, this.zIndex) : this.calculatePosition(lIndex, false, this.zIndex)
-                        styles.opacity = 1
-                        styles.visibility = 'visible'
-                    }
+                if (rIndex >= 0 || lIndex >= 0) {
+                    styles = rIndex >= 0 ? this.calculatePosition(rIndex, true, this.zIndex) : this.calculatePosition(lIndex, false, this.zIndex)
+                    styles.opacity = 1
+                    styles.visibility = 'visible'
+                }
 
-                    if (this.parent.hasHiddenSlides) {
-                        if (this.matchIndex(this.parent.leftOutIndex)) {
-                            styles = this.calculatePosition(this.parent.leftIndices.length - 1, false, this.zIndex)
-                        } else if (this.matchIndex(this.parent.rightOutIndex)) {
-                            styles = this.calculatePosition(this.parent.rightIndices.length - 1, true, this.zIndex)
-                        }
+                if (this.parent.hasHiddenSlides) {
+                    if (this.matchIndex(this.parent.leftOutIndex)) {
+                        styles = this.calculatePosition(this.parent.leftIndices.length - 1, false, this.zIndex)
+                    } else if (this.matchIndex(this.parent.rightOutIndex)) {
+                        styles = this.calculatePosition(this.parent.rightIndices.length - 1, true, this.zIndex)
                     }
                 }
+//                }
 
                 return Object.assign(styles, {
                     'border-width': this.parent.border + 'px',
